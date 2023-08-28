@@ -73,7 +73,12 @@ void mk_DijetHistosFill(string dataset = "X", string version = "vX") {
 	dataset=="UL2017B_ZB" || dataset=="UL2017C_ZB" || dataset=="UL2017D_ZB" ||
 	dataset=="UL2017E_ZB" || dataset=="UL2017F_ZB" ||
 	dataset=="UL2018A_ZB" || dataset=="UL2018B_ZB" || dataset=="UL2018C_ZB" ||
-	dataset=="UL2018D_ZB"
+	dataset=="UL2018D_ZB" ||
+	dataset=="2022C" || dataset=="2022D" || dataset=="2022E" || dataset=="2022F" || dataset=="2022G" ||
+	dataset=="2022C_ZB" || dataset=="2022D_ZB" || dataset=="2022E_ZB" || dataset=="2022F_ZB" || dataset=="2022G_ZB" ||
+	dataset=="2023B" || dataset=="2023C"|| dataset=="2023BCv123"|| dataset=="2023Cv123" || dataset=="2023Cv4" || dataset=="2023D" ||
+	dataset=="2023B_ZB" || dataset=="2023C_ZB" || dataset=="2023BCv123_ZB" || dataset=="2022Cv123_ZB" || dataset=="2023Cv4_ZB" || dataset=="2023D_ZB" ||
+	dataset=="Summer22" || dataset=="Summer22EE" || dataset=="Summer23"
 	)) {
     cout << "Dataset not supported" << endl << flush;
     cout << "Supported datasets are:" << endl
@@ -88,6 +93,11 @@ void mk_DijetHistosFill(string dataset = "X", string version = "vX") {
       	 << "UL2016BCD_ZB, UL2016EF_ZB, UL2016GH_ZB" << endl
 	 << "UL2017B_ZB, UL2017C_ZB, UL2017D_ZB, UL2017E_ZB, UL2017F_ZB" << endl
       	 << "UL2018A_ZB, UL2018B_ZB, UL2018C_ZB, UL2018D_ZB" << endl
+	 << "2022C, 2022D, 2022E, 2022F, 2022G" << endl
+	 << "2022C_ZB, 2022D_ZB, 2022E_ZB, 2022F_ZB, 2022G_ZB" << endl
+	 << "2023B, 2023C, 2023BCv123, 2023Cv123,  2023Cv4, 2023D" << endl
+	 << "2023B_ZB, 2023C_ZB, 2023BCv123_ZB, 2023Cv123_ZB, 2023Cv4_ZB, 2023D_ZB" << endl
+	 << "Summer22, Summer22EE, Summer23" << endl
 	 << endl;
   }
   
@@ -100,17 +110,22 @@ void mk_DijetHistosFill(string dataset = "X", string version = "vX") {
      dataset=="UL2018A" || dataset=="UL2018B" || dataset=="UL2018C" ||
      //dataset=="UL2018D"
      dataset=="UL2018D1" || dataset=="UL2018D2" ||
+     dataset=="2022C" || dataset=="2022D" || dataset=="2022E" || dataset=="2022F" || dataset=="2022G" ||
+     dataset=="2023B" || dataset=="2023C" || dataset=="2023BCv123" || dataset=="2023Cv123" || dataset=="2023Cv4" || dataset=="2023D" ||
 
      dataset=="UL2016BCD_ZB" || dataset=="UL2016EF_ZB" || dataset=="UL2016GH_ZB" ||
      dataset=="UL2017B_ZB" || dataset=="UL2017C_ZB" || dataset=="UL2017D_ZB" ||
      dataset=="UL2017E_ZB" || dataset=="UL2017F_ZB" ||
      dataset=="UL2018A_ZB" || dataset=="UL2018B_ZB" || dataset=="UL2018C_ZB" ||
-     dataset=="UL2018D_ZB"
+     dataset=="UL2018D_ZB" ||
+     dataset=="2022C_ZB" || dataset=="2022D_ZB" || dataset=="2022E_ZB" || dataset=="2022F_ZB" || dataset=="2022G_ZB" ||
+     dataset=="2023B_ZB" || dataset=="2023C_ZB" || dataset=="2023BCv123_ZB" || dataset=="2023Cv123_ZB" || dataset=="2023Cv4_ZB" || dataset=="2023D_ZB"
      );
   bool addMC =
     (dataset=="UL2016APVMG" ||
      dataset=="UL2016MG"  || dataset=="UL2016Flat" ||
-     dataset=="UL2017MG"  || dataset=="UL2018MG"
+     dataset=="UL2017MG"  || dataset=="UL2018MG" ||
+     dataset=="Summer22" || dataset=="Summer22EE" || dataset=="Summer23"
      ); 
 
   //cout << "Clean old shared objects and link files" << endl << flush;
@@ -159,8 +174,13 @@ void mk_DijetHistosFill(string dataset = "X", string version = "vX") {
     while (fin >> filename && nFiles<nFilesMax) {
       ++nFiles;
       c->AddFile(filename.c_str());
+      cout << filename <<endl;
     }
     cout << "Chained " << nFiles <<  " files" << endl << flush;
+
+
+    //string filename = "rootfiles/JetHT_Run2018B-UL2018_MiniAODv2_JMENanoAODv9-v1_NANOAOD.root";
+    //c->AddFile(filename.c_str());
 
     //bool isZB = (dataset=="UL2017B_ZB" || dataset=="UL2017C_ZB" || dataset=="UL2017D_ZB" ||
     //		 dataset=="UL2017E_ZB" || dataset=="UL2017F_ZB");

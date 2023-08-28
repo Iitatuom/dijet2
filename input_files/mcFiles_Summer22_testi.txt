@@ -1,0 +1,2 @@
+/media/DATA/NANO_MC/2022/QCD_PT-15to7000_TuneCP5_13p6TeV_pythia8_Run3Summer22NanoAODv11-castor_126X_mcRun3_2022_realistic_v2-v1_NANOAODSIM/049c0bfa-f14b-42e1-8de4-429b674a5f0b.root
+/media/DATA/NANO_MC/2022/QCD_PT-15to7000_TuneCP5_13p6TeV_pythia8_Run3Summer22NanoAODv11-castor_126X_mcRun3_2022_realistic_v2-v1_NANOAODSIM/3b0e74e5-6103-4478-99d2-afdba82a065e.root

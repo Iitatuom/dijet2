@@ -9,22 +9,48 @@ import os
 IOV_list= [
 #    'UL2016BCD','UL2016EF','UL2016GH',
 #    'UL2017B','UL2017C','UL2017D','UL2017E','UL2017F',
-#    'UL2018A','UL2018B','UL2018C',#'UL2018D',
+#    'UL2018A','UL2018B','UL2018C','UL2018D',
 #    'UL2018D1','UL2018D2',
 #    'UL2016APVMG','UL2016MG','UL2017MG', 'UL2018MG'
-    'UL2016BCD_ZB','UL2016EF_ZB','UL2016GH_ZB',
+#    'UL2016BCD_ZB','UL2016EF_ZB','UL2016GH_ZB',
 #    'UL2017B_ZB','UL2017C_ZB','UL2017D_ZB','UL2017E_ZB','UL2017F_ZB',
-    'UL2018A_ZB','UL2018B_ZB','UL2018C_ZB', 'UL2018D_ZB'
+#    'UL2018A_ZB','UL2018B_ZB','UL2018C_ZB', 'UL2018D_ZB',
+#    'UL2018B',
+#    '2022C',
+#    '2022D',
+#    '2022E',
+#    '2022F',
+#    '2022G',
+#    '2022C_ZB',
+#    '2022D_ZB',
+#    '2022E_ZB',
+#    '2022F_ZB',
+#    '2022G_ZB'#,
+#    '2023B',
+#    '2023BCv123',
+#    '2023Cv123',
+#    '2023Cv4',
+#    '2023C',
+#    '2023D',
+    '2023B_ZB',
+    '2023C_ZB',
+    '2023BCv123_ZB',
+    '2023Cv123_ZB',
+    '2023Cv4_ZB',
+    '2023D_ZB',
+#    'Summer22',
+#    'Summer22EE',
+#    'Summer23'
 ]
-version = 'v26'
+version = 'v1'
 
 #os.system("rm *.so *.d *.pcm")
 os.system("root -l -b -q mk_CondFormats.C")
 for iov in IOV_list:
     print "Process DijetHistosFill.C+g for IOV "+iov
-    os.system("ls -ltrh rootfiles/jmenano_mc_out_"+iov+"_"+version+".root")
-    os.system("ls -ltrh rootfiles/jmenano_data_out_"+iov+"_"+version+".root")
-    os.system("ls -ltrh logs/log_"+iov+"_"+version+".txt")
+    #os.system("ls -ltrh rootfiles/jmenano_mc_out_"+iov+"_"+version+".root")
+    #os.system("ls -ltrh rootfiles/jmenano_data_out_"+iov+"_"+version+".root")
+    #os.system("ls -ltrh logs/log_"+iov+"_"+version+".txt")
     os.system("nohup root -l -b -q 'mk_DijetHistosFill.C(\""+iov+"\",\""+version+"\")' > logs/log_"+iov+"_"+version+".txt &")
     print " => Follow logging with 'tail -f logs/log_"+iov+"_"+version+".txt'"
 #    os.system("fs flush")

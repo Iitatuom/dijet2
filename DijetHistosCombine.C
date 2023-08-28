@@ -36,6 +36,8 @@ void DijetHistosCombine() {
   DijetHistosCombines("rootfiles/jmenano_mc_out_UL2018MG_v26.root");
   DijetHistosCombines("haddfiles/jmenano_data_out_Run2_v26c.root");
   DijetHistosCombines("haddfiles/jmenano_mc_out_Run2_v26.root");
+  DijetHistosCombines("rootfilese/jmenano_data_out_2022C_v1.root");
+  DijetHistosCombines("rootfiles/jmenano_data_out_2023C_v1.root")
   
 } // DijetHistosCombine
 

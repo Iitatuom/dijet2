@@ -1,0 +1,3 @@
+/media/DATA/JME_NANO_DATA/2022/JMENanoRun3_v2p1_Run2022D-PromptReco-v3/ZeroBias/220915_171326/0000/tree_1.root
+/media/DATA/JME_NANO_DATA/2022/JMENanoRun3_v2p1_Run2022D-PromptReco-v3/ZeroBias/220915_171326/0000/tree_2.root
+/media/DATA/JME_NANO_DATA/2022/JMENanoRun3_v2p1_Run2022D-PromptReco-v3/ZeroBias/220915_171326/0000/tree_3.root

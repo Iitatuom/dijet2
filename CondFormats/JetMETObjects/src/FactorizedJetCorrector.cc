@@ -390,7 +390,7 @@ std::vector<float> FactorizedJetCorrector::getSubCorrections()
 //--- Reads the parameter names and fills a vector of floats -------------
 //------------------------------------------------------------------------
 std::vector<float> FactorizedJetCorrector::fillVector(std::vector<VarTypes> fVarTypes)
-{
+{  
   std::vector<float> result;
   for(unsigned i=0;i<fVarTypes.size();i++) 
     {
@@ -426,22 +426,22 @@ std::vector<float> FactorizedJetCorrector::fillVector(std::vector<VarTypes> fVar
         }
       else if (fVarTypes[i] == kJetEMF) 
         {
-          if (!mIsJetEMFset) 
+	  if (!mIsJetEMFset) 
             handleError("FactorizedJetCorrector","jet EMF is not set");
           result.push_back(mJetEMF);
         } 
       else if (fVarTypes[i] == kJetA) 
         {
-          if (!mIsJetAset) 
+          /*if (!mIsJetAset) 
             handleError("FactorizedJetCorrector","jet area is not set");
-          result.push_back(mJetA);
+	    result.push_back(mJetA);*/
         }
       else if (fVarTypes[i] == kRho) 
         {
-          if (!mIsRhoset) 
+	  /*if (!mIsRhoset) 
             handleError("FactorizedJetCorrector","fastjet density Rho is not set");
           result.push_back(mRho);
-        }
+	  */}
       else if (fVarTypes[i] == kRelLepPt) 
         {
           if (!mIsJetPtset||!mIsAddLepToJetset||!mIsLepPxset||!mIsLepPyset) 
